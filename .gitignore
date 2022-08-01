@@ -10,6 +10,7 @@
 
 # production
 /build
+/union
 
 # misc
 .DS_Store
