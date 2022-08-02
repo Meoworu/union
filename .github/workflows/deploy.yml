@@ -29,13 +29,6 @@ jobs:
         yarn build
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@main
-      with:
-        SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-        ARGS: "-rltgoDzvO --delete"
-        REMOTE_HOST: ${{ secrets.HOST }}
-        REMOTE_USER: ${{ secrets.SERVER_SSH_NAME }}
-        TARGET: ${{ secrets.REMOTE_TARGET }}
-        SOURCE: "dist/"
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
         ARGS: "-rltgoDzvO --delete"
